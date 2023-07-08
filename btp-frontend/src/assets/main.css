@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+    --btp-primary: #1A2238;
+    --btp-violet: #9DAAF2;
+    --btp-orange: #ff6a3d;
+    --btp-yellow: #F4DB7D;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow-y: scroll;
+}
