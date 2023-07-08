@@ -1,10 +1,23 @@
 <script>
+// charts
+import { Chart as ChartJS, ArcElement, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
+import { Doughnut } from 'vue-chartjs';
+import { Bar } from 'vue-chartjs';
+
+// helpers
 import dateTimeHelper from '../../helpers/dateTimeHelper';
 import stringHelper from '../../helpers/stringHelper';
+import chartHelper from '../../helpers/chartHelper';
+
+ChartJS.register(ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement);
 
 export default {
     name: 'dashboard',
     props: ['projectId'],
+    components: {
+        Doughnut,
+        Bar
+    },
     methods: {
         getTimeAgo(dateTime) {
             return dateTimeHelper.calculateTimeAgo(dateTime);
@@ -12,6 +25,14 @@ export default {
         pluraliseWord(count, word) {
             return stringHelper.pluralise(count, word);
         }
+    },
+    data() {
+        return {
+            chartData: null
+        }
+    },
+    created() {
+        this.chartData = chartHelper.createFakeData();
     }
 }
 </script>
@@ -63,20 +84,20 @@ export default {
                     </div>
                 </div>
                 <h6 class="my-3 fw-bold">Ticket summary</h6>
-                <div class="row row-cols-1 row-cols-md-2 mb-4">
+                <div class="row row-cols-1 row-cols-md-2">
                     <div class="col col-md-4">
                         <div class="row row-cols-2 mb-4 flex-md-column">
                             <div class="col col-md-12 mb-md-4">
                                 <div class="card border-0" style="background-color: #e9ecef;">
                                     <div class="card-body">
-                                        Placeholder
+                                        <Doughnut :data="chartData.ticketStatusConfig" :options="chartData.chartOptions" />
                                     </div>
                                 </div>
                             </div>
                             <div class="col col-md-12">
                                 <div class="card border-0" style="background-color: #e9ecef;">
                                     <div class="card-body">
-                                        Placeholder
+                                        <Doughnut :data="chartData.usersWhoHaveContributedConfig" :options="chartData.chartOptions" />
                                     </div>
                                 </div>
                             </div>
@@ -85,20 +106,28 @@ export default {
                     <div class="col col-md-8">
                         <div class="card border-0" style="background-color: #e9ecef;">
                             <div class="card-body">
-                                Placeholder
+                                <Doughnut :data="chartData.ticketConfig" :options="chartData.chartOptions" />
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row row-cols-1 mb-3">
+                <ul class="col-12 m-0 p-0" style="list-style-type: none;">
+                    <li><small class="text-muted">1. Amount of tickets open (green) versus closed (light grey).</small></li>
+                    <li><small class="text-muted">2. Amount of users who have contributed by creating or closed tickets (green) vs non-contributors (light grey).</small></li>
+                    <li><small class="text-muted">3. Amount of total labels on all tickets.</small></li>
+                </ul>
+                <div class="row row-cols-1 mt-3">
                     <div class="col-12">
-                        <div class="card border-0 bg-light">
+                        <div class="card border-0" style="background-color: #e9ecef;">
                             <div class="card-body">
-                                Placeholder
+                                <Bar :data="chartData.ticketsClosedPerUserConfig" :options="chartData.chartOptions" />
                             </div>
                         </div>
                     </div>
                 </div>
+                <ul class="col-12 m-0 p-0 mt-2" style="list-style-type: none;">
+                    <li><small class="text-muted">Amount ticket that have been closed per user.</small></li>
+                </ul>
             </div>
             <div class="col col-md-3">
                 <div class="mb-3">
