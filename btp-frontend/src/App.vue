@@ -1,10 +1,23 @@
 <script>
+// third-party services
+import nprogress from 'nprogress';
+
+// custom services
 import MainNavigation from './components/MainNavigation.vue';
 
 export default {
 	name: 'app',
     components: {
         MainNavigation
+    },
+    mounted() {
+        // configures the progress bar
+        nprogress.configure({
+            minimum: 0.1,
+            easing: "ease",
+            speed: 500,
+            showSpinner: false,
+        });
     }
 }
 </script>
