@@ -1,7 +1,18 @@
 <script>
+import dateTimeHelper from '../../helpers/dateTimeHelper';
+import stringHelper from '../../helpers/stringHelper';
+
 export default {
     name: 'dashboard',
-    props: ['projectId']
+    props: ['projectId'],
+    methods: {
+        getTimeAgo(dateTime) {
+            return dateTimeHelper.calculateTimeAgo(dateTime);
+        },
+        pluraliseWord(count, word) {
+            return stringHelper.pluralise(count, word);
+        }
+    }
 }
 </script>
 
@@ -20,7 +31,7 @@ export default {
                             </div>
                             <div class="card-body my-2 my-md-4">
                                 <h5 class="card-title fw-bold">0</h5>
-                                <p class="card-text">Tickets open</p>
+                                <p class="card-text">{{ pluraliseWord(0, 'Ticket') }} open</p>
                             </div>
                         </div>
                     </div>
@@ -33,7 +44,7 @@ export default {
                             </div>
                             <div class="card-body my-2 my-md-4">
                                 <h5 class="card-title fw-bold">0</h5>
-                                <p class="card-text">Tickets closed</p>
+                                <p class="card-text">{{ pluraliseWord(0, 'Ticket') }} closed</p>
                             </div>
                         </div>
                     </div>
@@ -46,7 +57,7 @@ export default {
                             </div>
                             <div class="card-body my-2 my-md-4">
                                 <h5 class="card-title fw-bold">0</h5>
-                                <p class="card-text">Collaborators</p>
+                                <p class="card-text">{{ pluraliseWord(0, 'Collaborator') }}</p>
                             </div>
                         </div>
                     </div>
