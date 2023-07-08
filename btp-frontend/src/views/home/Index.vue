@@ -128,8 +128,8 @@ export default {
                 <div class="py-4 border-top d-flex flex-column justify-content-center text-center">
                     <h4>Looking for a new <span class="fw-bold" style="color: var(--btp-orange)">Bug</span><span class="fw-bold"> Tracker</span>?</h4>
                     <div class="d-grid gap-2 pt-4 text-center">
-                        <RouterLink to="index" class="btn btn-success">Get started</RouterLink>
-                        <RouterLink to="index" class="btn focus-ring py-1 px-2 text-decoration-none border bg-white">Login</RouterLink>
+                        <RouterLink :to="{ name: 'register' }" class="btn btn-success">Get started</RouterLink>
+                        <RouterLink :to="{ name: 'login' }" class="btn focus-ring py-1 px-2 text-decoration-none border bg-white">Login</RouterLink>
                     </div>
                 </div>
             </div>

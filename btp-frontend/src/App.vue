@@ -1,6 +1,7 @@
 <script>
 // third-party services
 import nprogress from 'nprogress';
+import "nprogress/nprogress.css";
 
 // custom services
 import MainNavigation from './components/MainNavigation.vue';

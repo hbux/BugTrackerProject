@@ -17,7 +17,7 @@ export default {
                 <a class="link-dark text-decoration-none my-4" style="background-color: white;">
                     <span class="fs-5 fw-semibold">Log in to <span class="fw-bold" style="color: var(--btp-orange)">Bug</span><span class="fw-bold"> Tracker</span></span>
                 </a>
-                <ErrorMessage message="" validationErrors=""></ErrorMessage>
+                <ErrorMessage message="" validationErrors=""/>
                 <form class="card bg-light w-100" enctype="application/x-www-form-urlencoded">
                     <div class="card-body">
                         <div class="mb-3">
