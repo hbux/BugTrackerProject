@@ -28,7 +28,8 @@ export default {
                         A dashboard within each project that quick insights about the project progress.
                     </p>
                     <div class="row row-cols-1">
-                        <img src="/Dashboard.png">
+                        <p>Placeholder image</p>
+                        <!-- <img src="/Dashboard.png"> -->
                     </div>
                 </div>
                 <div class="py-4">
@@ -92,7 +93,8 @@ export default {
                         Browse all open tickets and closed tickets, able to filter tickets by phrase or sort tickets based on the ticket assignee, author or default sorting techniques.
                     </p>
                     <div class="row row-cols-1">
-                        <img src="/Tickets.png">
+                        <p>Placeholder image</p>
+                        <!-- <img src="/Tickets.png"> -->
                     </div>
                 </div>
                 <div class="py-4">
@@ -101,7 +103,8 @@ export default {
                         View every little detail about a particular ticket, including ticket history.
                     </p>
                     <div class="row row-cols-1">
-                        <img src="/Ticket.png">
+                        <p>Placeholder image</p>
+                        <!-- <img src="/Ticket.png"> -->
                     </div>
                 </div>
                 <div class="py-4">
@@ -110,7 +113,8 @@ export default {
                         Recieve notifications when you've been invited to a project or when a new ticket is assigned to you!
                     </p>
                     <div class="row row-cols-1">
-                        <img src="/Notifications.png">
+                        <p>Placeholder image</p>
+                        <!-- <img src="/Notifications.png"> -->
                     </div>
                 </div>
                 <div class="py-4">
@@ -119,10 +123,12 @@ export default {
                         Each project can have different users, who are assigned to different roles. Even project permissions can be customised by owners.
                     </p>
                     <div class="row row-cols-1 mb-2">
-                        <img src="/Access.png">
+                        <p>Placeholder image</p>
+                        <!-- <img src="/Access.png"> -->
                     </div>
                     <div class="row row-cols-1 mb-2">
-                        <img src="/Roles.png">
+                        <p>Placeholder image</p>
+                        <!-- <img src="/Roles.png"> -->
                     </div>
                 </div>
                 <div class="py-4 border-top d-flex flex-column justify-content-center text-center">

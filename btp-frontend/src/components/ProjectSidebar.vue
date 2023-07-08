@@ -37,7 +37,7 @@ export default {
                     </div>
                 </div>
                 <div class="nav-item">
-                    <RouterLink to="index" active-class="active" class="sidebar-link nav-link">hbux/Example Project #1</RouterLink>
+                    <RouterLink to="/" class="sidebar-link nav-link">hbux/Example Project #1</RouterLink>
                 </div>
             </nav>
         </div>
