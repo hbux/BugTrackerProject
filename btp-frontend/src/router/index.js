@@ -12,13 +12,13 @@ const router = createRouter({
 	history: createWebHistory(import.meta.env.BASE_URL),
 	routes: [
         {
-			path: '/',
-			name: 'index',
-			component: Index,
-			meta: {
-				requiresAuth: false
-			}
-		},
+            path: '/',
+            name: 'index',
+            component: Index,
+            meta: {
+                requiresAuth: false
+            }
+        },
         {
             path: '/account/register',
             name: 'register',
