@@ -59,7 +59,7 @@ namespace btp_api.Services.Implementations
         /// </summary>
         /// <param name="user">The user to create the token for</param>
         /// <returns>A valid JWT</returns>
-        /// <exception cref="NullReferenceException">Ensures the secret is not null</exception>
+        /// <exception cref="ArgumentNullException">Ensures the secret is not null</exception>
         public string GenerateToken(User user)
         {
             // Retrieve the secret from appsettings
@@ -68,7 +68,7 @@ namespace btp_api.Services.Implementations
             if (string.IsNullOrEmpty(secret))
             {
                 // Ensures that the secret cannot be null
-                throw new NullReferenceException("No secret found, please ensure secret has been added into configuration files.");
+                throw new ArgumentNullException("No secret found, please ensure secret has been added into configuration files.");
             }
 
             // Create claims based on user information
